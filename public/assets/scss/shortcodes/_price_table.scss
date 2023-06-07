@@ -1,0 +1,117 @@
+.pricing-plan {
+  text-align: center;
+  padding: 40px 40px 10px;
+
+
+  .price-wrap {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+    line-height: 0.7;
+    margin: 60px 0 22px;
+
+    &[class*='bg-'] {
+      padding: 30px 30px 10px;
+      margin-top: 50px;
+      margin-bottom: 0;
+      .plan-sign, .plan-decimals{
+        color: $colorMain2;
+      }
+    }
+    .plan-sign, .plan-decimals{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: $fontColor;
+    }
+    .plan-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+  }
+  [class*='bg-'] {
+    padding: 10px 30px 30px;
+    margin-left: -41px;
+    margin-right: -41px;
+  }
+  .plan-name {
+    &[class*='bg-'] {
+      padding-top: 30px;
+      margin-top: -40px;
+    }
+    h3 {
+      font-family: "Open Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 5.6px;
+      font-size: 14px;
+      color: $colorMain2;
+      padding-left: 65px;
+      line-height: 1;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2.37em;
+      @media(max-width: 575px){
+        margin-bottom: 1.37em;
+        padding-left: 0 ;
+      }
+      &:before{
+        content: '';
+        height: 2px;
+        width: 50px;
+        background: $colorMain2;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        display: block;
+        transform: translateY(-50%);
+        @media(max-width: 575px){
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1200px) {
+    padding: 57px 40px 10px;
+    [class*='bg-'] {
+      margin-left: -41px;
+      margin-right: -41px;
+    }
+    .plan-name[class*='bg-'] {
+      margin-top: -57px;
+    }
+  }
+
+  .plan-features {
+    margin: 34px 0 20px;
+  }
+
+  .plan-button {
+    position: relative;
+    top: 34px;
+    left: 0px;
+  }
+
+  //featured border
+  &.plan-featured {
+    background-color: $colorMain2;
+    .plan-features{
+      color: $darkColor;
+    }
+    .plan-name{
+      h3{
+        color: $lightColor;
+        &:before{
+          background-color: $lightColor;
+        }
+      }
+    }
+
+  }
+}
+

@@ -1,0 +1,279 @@
+/*
+** Header
+*/
+
+.page_header {
+  //same as .page_header_side
+  transition: $headerTransition;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+
+  //display_table fix on affix
+  height: auto;
+
+  .boxed &,
+  &.affix {
+    position: fixed !important;
+    z-index: 1001;
+    box-shadow: $boxShadow;
+    opacity: 0.98;
+    //remove bottom border for affixed header with s-borderbottom class
+    &:after {
+      background-color: transparent;
+    }
+
+
+      a.logo{
+        img{
+          width: 50px;
+          max-height: 50px;
+        }
+      }
+
+  }
+  //hidding top border on affixed header
+  &.affix.s-bordertop::before {
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    &.mobile-active {
+      z-index: 1003;
+      opacity: 1;
+    }
+  }
+
+  //fix bug when refresh page at the bottom and header goes down
+  &.affix-bottom {
+    //!important is necessary
+    top: 0 !important;
+    position: fixed !important;
+  }
+
+  //min height for mobile toggler be always on header
+  //for prevent header mobile menu toggler overlap bordered header
+  // 62 - broken design on 60px color toggler - back to 60
+  .row {
+    min-height: 60px;
+  }
+
+
+  //fix header buttons dropdown
+  .dropdown {
+    //white-space: nowrap;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .btn {
+    margin-bottom: 0;
+
+  }
+}
+
+.page_header_wrapper {
+  transition: height 0.5s ease;
+}
+
+//when refreshing page - header height is smaller because it is affixed
+//fixing
+//absolute header when using header on slider or on title (for parallax or image background)
+.header_absolute {
+  position: absolute;
+  right: 0;
+  left: 0;
+@media(max-width: 1200px){
+  position: relative;
+}
+  .page_header,
+  .page_topline,
+  .page_header_wrapper {
+    z-index: 1002;
+    position: relative;
+    right: 0;
+    left: 0;
+
+  }
+
+  //&.cover-background {
+
+
+    //fix for boxed layout
+
+  //}
+
+}
+
+  a.logo{
+    img{
+      width: 50px;
+      max-height: 50px;
+    }
+  }
+
+
+
+.header-1{
+
+}
+//other header sections
+.page_topline {
+  line-height: 1.4;
+
+  &.small-text i {
+    font-size: 14px;
+  }
+
+  .icon-inline {
+    justify-content: center;
+  }
+  .social-icons {
+    display: inline-block;
+    @media(max-width: 768px){
+      margin-bottom: 15px;
+    }
+    a{
+      margin-right: 13px;
+      font-size: 16px;
+      color: $fontColor;
+      &:hover{
+        color: $colorMain2;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      @media(max-width: 991px){
+        margin-right: 8px;
+      }
+    }
+  }
+  //topline menu
+  .widget_nav_menu {
+    display: inline-block;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+    }
+  }
+
+  .dropdown.shopping-cart{
+    .dropdown-menu {
+      width: 430px;
+      @media(max-width: 767px){
+        left: -40px;
+
+      }
+      @media(max-width: 575px){
+        width: 100vw;
+        text-align: center;
+      }
+
+    }
+
+  }
+  .dropdown-menu {
+    right: 0px;
+    left: auto;
+   width: 300px;
+    margin-top: 10px;
+
+    @media(max-width: 767px){
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: center;
+      right: auto;
+
+    }
+    @media(max-width: 575px){
+      width: 100vw;
+    }
+
+  }
+  .dropdown-language {
+    //flags
+    a > img {
+      max-width: 16px;
+      position: relative;
+      bottom: 1px;
+      margin-right: 6px;
+    }
+  }
+
+  //news owl-carousel
+  .owl-news-slider-dates {
+    font-weight: 700;
+  }
+  .topline-news-item {
+    height: 2em;
+    line-height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 90px;
+    .cat-links {
+      display: inline;
+    }
+  }
+  .topline-news-nav-arrow {
+    border: 1px solid $darkgreyColor;
+    font-size: 10px;
+    position: relative;
+    bottom: 20px;
+    line-height: 38px;
+    width: 40px;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .owl-nav > div {
+    opacity: 1;
+  }
+
+}
+
+.page_toplogo {
+  @media (min-width: 992px) {
+    .media + .media {
+      margin-left: 60px;
+    }
+  }
+
+  .widget_search form, .widget_product_search form,
+  .widget_search input, .widget_product_search input {
+    max-width: none;
+  }
+
+  @media (max-width: 991px) {
+    .media {
+      margin: 10px;
+    }
+  }
+}
+
+.page_topline,
+.page_toplogo,
+.page_header {
+  .container-fluid {
+    @media(min-width: 1500px) {
+      padding-left: 128px;
+      padding-right: 112px;
+    }
+  }
+}
+
+@import 'header/header_includes';
+@import 'header/logo';
+@import 'header/search_modal';

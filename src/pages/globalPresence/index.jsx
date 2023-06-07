@@ -1,0 +1,1 @@
+export {default as MapCont} from './MapCont';

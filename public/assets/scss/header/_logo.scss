@@ -1,0 +1,95 @@
+/*logo*/
+a.logo {
+  display: flex;
+  //display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  img {
+    display: inline-block;
+    //limit logo - who knows what image user will use
+    @media(max-width: 1200px){
+      max-height: 50px;
+      width: 50px;
+    }
+  }
+  .logo-text {
+    font-size:30px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-indent: 12px;
+    line-height: 1.1;
+    @media(max-width: 575px){
+      font-size: 24px;
+    }
+  }
+  .logo-subtext {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 22px;
+    padding: 0 10px;
+    font-weight: 700;
+    color: $fontColor;
+    @media(max-width: 575px){
+     letter-spacing: 17px;
+    }
+  }
+
+  //text below logo
+  .logo-text-bottom {
+    font-size: 26px;
+  }
+  .flex-column,
+  &.flex-column {
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 2px;
+    &.text-center {
+      display: inline-block;
+    }
+  }
+  //text below logo centered
+  .text-center & {
+    @media(max-width: 575px){
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  @media(max-width: 767px) {
+    //why?
+    //justify-content: center;
+  }
+  //header in menu
+  .header_logo_center & {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+    z-index: 2;
+  }
+  .header_logo_center.affix & {
+    padding: 5px 0;
+  }
+}
+
+//centered logo
+@media (min-width: 992px) {
+  .header_logo_center .logo_wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.page_footer{
+  .logo{
+    margin-top: -15px;
+    margin-bottom: 30px;
+  }
+}

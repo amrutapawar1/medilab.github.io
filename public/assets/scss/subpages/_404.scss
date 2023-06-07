@@ -1,0 +1,57 @@
+/*
+** 404
+*/
+
+.error-404 {
+  min-height: calc(100vh - 75px - 114px);
+  .page_wrap{
+    margin: 0 255px;
+    padding: 87px 50px 120px;
+    @media(max-width: 1200px){
+      margin: 0 50px;
+    }
+    @media(max-width: 575px){
+      padding: 30px 30px 40px;
+      margin: 0;
+    }
+    position: relative;
+    clear: both;
+    overflow: hidden;
+  }
+  .page-header {
+    h3 {
+      font-size: 100px;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1;
+      margin: 0;
+      color: $colorMain;
+      @media (min-width: 992px) {
+        font-size: 238px;
+        letter-spacing: -10px;
+      }
+    }
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+      @media (min-width: 768px) {
+        letter-spacing: 0.1em;
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 34px;
+      }
+    }
+  }
+  .page-content{
+    .btn{
+
+    }
+    p{
+      font-weight: 300;
+      font-style: italic;
+      font-size: 20px ;
+    }
+  }
+  .widget_search {
+    margin: 34px 0 0;
+  }
+}
